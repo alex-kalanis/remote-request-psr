@@ -1,0 +1,30 @@
+{
+    "name": "alex-kalanis/remote-request-psr",
+    "description": "Remote Request adapter for PSR-7",
+    "keywords": [
+        "request",
+        "psr"
+    ],
+    "license": "BSD-3-Clause",
+    "type": "library",
+    "require": {
+        "alex-kalanis/remote-request": ">=6.2",
+        "php-fig/http-message": ">=2.0",
+        "ext-mbstring": "*",
+        "php": ">=7.2.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": ">=7.2 <=9"
+    },
+    "suggest": {
+    },
+    "autoload": {
+        "psr-4": {
+            "kalanis\\RemoteRequestPsr\\": "php-src/"
+        }
+    },
+    "scripts": {
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
