@@ -4,6 +4,7 @@ namespace kalanis\RemoteRequestPsr\Processor;
 
 
 use kalanis\RemoteRequest\Connection;
+use kalanis\RemoteRequest\Interfaces;
 use kalanis\RemoteRequest\RequestException;
 use kalanis\RemoteRequestPsr\Http\Answer;
 use kalanis\RemoteRequestPsr\Http\BasicAuth;
@@ -17,7 +18,6 @@ use Psr\Http\Message\ResponseInterface;
  * Class Simple
  * @package kalanis\RemoteRequestPsr\Processor
  * Process requests in format of PSR interfaces
- * @codeCoverageIgnore runs external queries
  */
 class Simple
 {
@@ -50,11 +50,21 @@ class Simple
         }
         $libQuery->setContentStream($request->getBody());
 
-        $libProcessor = new Connection\Processor(); # tcp/ip http/ssl
-        $libProcessor->setConnectionParams($libParams);
-        $libProcessor->setData($libQuery);
-
         $libHttpAnswer = new Answer();
-        return new ResponseAdapter($libHttpAnswer->setResponse($libProcessor->getResponse()));
+        return new ResponseAdapter($libHttpAnswer->setResponse($this->runner($libParams, $libQuery)));
+    }
+
+    /**
+     * @param Connection\Params\AParams $params
+     * @param Interfaces\IQuery $query
+     * @return resource|null
+     * @codeCoverageIgnore because external resources
+     */
+    protected function runner(Connection\Params\AParams $params, Interfaces\IQuery $query)
+    {
+        $libProcessor = new Connection\Processor(); # tcp/ip http/ssl
+        $libProcessor->setConnectionParams($params);
+        $libProcessor->setData($query);
+        return $libProcessor->getResponse();
     }
 }

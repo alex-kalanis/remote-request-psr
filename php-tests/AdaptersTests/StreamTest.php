@@ -4,6 +4,7 @@ namespace AdaptersTests;
 
 
 use CommonTestClass;
+use kalanis\RemoteRequest\Protocols\Helper;
 use kalanis\RemoteRequest\Protocols\Http;
 use kalanis\RemoteRequest\RequestException;
 use kalanis\RemoteRequestPsr\Adapters\StreamAdapter;
@@ -137,6 +138,28 @@ class StreamTest extends CommonTestClass
 
     /**
      * @throws RequestException
+     */
+    public function testStream(): void
+    {
+        $answer = new XAnswer();
+        $answer->fillBodyStream('ijnuhbzgvtfcrdxesy');
+        $lib = new StreamAdapter($answer);
+        $this->assertEquals('ijnuhbzgvtfcrdxesy', $lib->getContents());
+    }
+
+    /**
+     * @throws RequestException
+     */
+    public function testString(): void
+    {
+        $answer = new XAnswer();
+        $answer->fillBodyString('ijnuhbzgvtfcrdxesy');
+        $lib = new StreamAdapter($answer);
+        $this->assertEquals('ijnuhbzgvtfcrdxesy', $lib->getContents());
+    }
+
+    /**
+     * @throws RequestException
      * @return StreamAdapter
      */
     protected function getLib(): StreamAdapter
@@ -159,5 +182,22 @@ class StreamTest extends CommonTestClass
   </body>
 </html>');
         return new StreamAdapter($content);
+    }
+}
+
+
+class XAnswer extends Answer
+{
+    public function fillBodyStream(string $body = ''): void
+    {
+        $res = Helper::getTempStorage();
+        fwrite($res, $body);
+        rewind($res);
+        $this->body = $res;
+    }
+
+    public function fillBodyString(string $body = ''): void
+    {
+        $this->body = $body;
     }
 }

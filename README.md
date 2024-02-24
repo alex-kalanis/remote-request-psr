@@ -17,7 +17,7 @@ PSR adapter for connecting Remote Request into your application with public inte
 ```
 {
     "require": {
-        "alex-kalanis/remote-request-psr": "1.0"
+        "alex-kalanis/remote-request-psr": "1.1"
     }
 }
 ```

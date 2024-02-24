@@ -36,7 +36,6 @@ class StreamAdapter implements StreamInterface
      * @param string|int|float|bool|null $content
      * @throws RequestException
      * @return resource
-     * @codeCoverageIgnore if Answer passes string and not stream
      */
     protected function toStream($content)
     {

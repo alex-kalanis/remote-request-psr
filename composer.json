@@ -1,6 +1,6 @@
 {
     "name": "alex-kalanis/remote-request-psr",
-    "description": "Remote Request adapter for PSR-7",
+    "description": "Remote Request adapter for PSR-7 and PSR-18",
     "keywords": [
         "request",
         "psr"
@@ -10,6 +10,7 @@
     "require": {
         "alex-kalanis/remote-request": ">=6.2",
         "psr/http-message": ">=2.0",
+        "psr/http-client": "^1.0",
         "ext-mbstring": "*",
         "php": ">=7.2.0"
     },
