@@ -8,13 +8,14 @@
     "license": "BSD-3-Clause",
     "type": "library",
     "require": {
-        "alex-kalanis/remote-request": ">=6.2",
+        "alex-kalanis/remote-request": ">=6.3 <7",
         "psr/http-message": ">=2.0",
         "psr/http-client": "^1.0",
         "ext-mbstring": "*",
-        "php": ">=7.2.0"
+        "php": ">=7.4.0"
     },
     "require-dev": {
+        "shipmonk/composer-dependency-analyser": "^1.4",
         "phpstan/phpstan": "^1.0",
         "phpstan/phpstan-phpunit": "^1.0",
         "friendsofphp/php-cs-fixer": "^3.0",

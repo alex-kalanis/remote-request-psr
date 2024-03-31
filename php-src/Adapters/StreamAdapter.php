@@ -19,8 +19,7 @@ class StreamAdapter implements StreamInterface
 {
     /** @var resource|null */
     protected $localStream = null;
-    /** @var int */
-    protected $offset = 0;
+    protected int $offset = 0;
 
     /**
      * @param Answer $answer

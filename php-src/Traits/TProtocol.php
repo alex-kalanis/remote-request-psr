@@ -14,8 +14,7 @@ use Psr\Http\Message\MessageInterface;
  */
 trait TProtocol
 {
-    /** @var string */
-    protected $protocol = '1.0';
+    protected string $protocol = '1.0';
 
     public function getProtocolVersion(): string
     {

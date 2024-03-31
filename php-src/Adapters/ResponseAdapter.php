@@ -18,10 +18,8 @@ use Psr\Http\Message\StreamInterface;
  */
 class ResponseAdapter implements ResponseInterface
 {
-    /** @var Answer */
-    protected $answer = null;
-    /** @var StreamAdapter */
-    protected $stream = null;
+    protected Answer $answer;
+    protected StreamAdapter $stream;
 
     /**
      * @param Answer $answer

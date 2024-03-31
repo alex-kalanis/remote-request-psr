@@ -21,10 +21,8 @@ class Response implements ResponseInterface
     use TBody;
     use TProtocol;
 
-    /** @var int */
-    protected $status = 0;
-    /** @var string */
-    protected $reason = 'KO';
+    protected int $status = 0;
+    protected string $reason = 'KO';
 
     public function getStatusCode(): int
     {

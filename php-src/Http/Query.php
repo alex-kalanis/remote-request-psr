@@ -15,10 +15,8 @@ use Psr\Http\Message\StreamInterface;
  */
 class Query extends Protocols\Http\Query
 {
-    /** @var string */
-    protected $path = '/';
-    /** @var StreamInterface|null */
-    protected $streamBody = null;
+    protected string $path = '/';
+    protected ?StreamInterface $streamBody;
 
     public function setContentStream(StreamInterface $stream): self
     {

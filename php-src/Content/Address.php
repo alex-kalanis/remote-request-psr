@@ -14,26 +14,16 @@ use Psr\Http\Message\UriInterface;
  */
 class Address implements UriInterface
 {
-    /** @var string */
-    protected $scheme = '';
-    /** @var string */
-    protected $target = '';
-    /** @var string */
-    protected $userInfo = '';
-    /** @var string */
-    protected $host = '';
-    /** @var int */
-    protected $port = 0;
-    /** @var string */
-    protected $path = '/';
-    /** @var string */
-    protected $query = '';
-    /** @var string */
-    protected $fragment = '';
-    /** @var string */
-    protected $user = '';
-    /** @var string|null */
-    protected $pass = null;
+    protected string $scheme = '';
+    protected string $target = '';
+    protected string $userInfo = '';
+    protected string $host = '';
+    protected int $port = 0;
+    protected string $path = '/';
+    protected string $query = '';
+    protected string $fragment = '';
+    protected string $user = '';
+    protected ?string $pass = null;
 
     public function getScheme(): string
     {

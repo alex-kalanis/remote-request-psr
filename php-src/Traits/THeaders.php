@@ -15,7 +15,7 @@ use Psr\Http\Message\MessageInterface;
 trait THeaders
 {
     /** @var array<string, array<int, string>> */
-    protected $headers = [];
+    protected array $headers = [];
 
     public function getHeaders(): array
     {

@@ -16,8 +16,7 @@ use RuntimeException;
  */
 trait TBody
 {
-    /** @var StreamInterface|null */
-    protected $body = null;
+    protected ?StreamInterface $body = null;
 
     public function getBody(): StreamInterface
     {

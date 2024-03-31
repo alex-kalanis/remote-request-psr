@@ -20,8 +20,7 @@ class Stream implements StreamInterface
 {
     /** @var resource|null */
     protected $localStream = null;
-    /** @var int */
-    protected $offset = 0;
+    protected int $offset = 0;
 
     /**
      * @param resource|string|int|float|null $source

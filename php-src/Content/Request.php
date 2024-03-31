@@ -23,12 +23,9 @@ class Request implements RequestInterface
     use TBody;
     use TProtocol;
 
-    /** @var string */
-    protected $target = '';
-    /** @var string */
-    protected $method = 'GET';
-    /** @var UriInterface|null */
-    protected $uri = null;
+    protected string $target = '';
+    protected string $method = 'GET';
+    protected ?UriInterface $uri = null;
 
     public function getRequestTarget(): string
     {

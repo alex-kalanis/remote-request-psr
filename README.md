@@ -1,7 +1,7 @@
 Remote Request PSR
 ==============
 
-[![Build Status](https://app.travis-ci.com/alex-kalanis/remote-request-psr.svg?branch=master)](https://app.travis-ci.com/github/alex-kalanis/remote-request-psr)
+![Build Status](https://github.com/alex-kalanis/remote-request-psr/actions/workflows/code_checks.yml/badge.svg)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/alex-kalanis/remote-request-psr/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/alex-kalanis/remote-request-psr/?branch=master)
 [![Latest Stable Version](https://poser.pugx.org/alex-kalanis/remote-request-psr/v/stable.svg?v=1)](https://packagist.org/packages/alex-kalanis/remote-request-psr)
 [![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%207.4-8892BF.svg)](https://php.net/)
@@ -14,12 +14,8 @@ PSR adapter for connecting Remote Request into your application with public inte
 
 ## PHP Installation
 
-```
-{
-    "require": {
-        "alex-kalanis/remote-request-psr": "1.1"
-    }
-}
+```bash
+composer.phar require alex-kalanis/remote-request-psr
 ```
 
 (Refer to [Composer Documentation](https://github.com/composer/composer/blob/master/doc/00-intro.md#introduction) if you are not
